@@ -1,6 +1,10 @@
 # neblio-api
 A Node.js wrapper API for interacting with a Neblio wallet/daemon and safely exposing RPC calls as endpoints.
 
+## What is this?
+
+If you are wanting to build an app on Neblio, you'll get to a point where you'll need to work with a daemon or wallet, making calls to it and interacting with the blockchain itself. Neblio provide some API endpoints you can already use, this package is for low-level blockchain calls.
+
 ## Requirements
 
 All you need is Node.js installed on your server, a Neblio wallet/daemon that is running and love.
