@@ -10,7 +10,7 @@ export class NeblioRoutes {
         this.rpcClient = rpcClient;
 
         this.router.get(`${this.path}/getlatestblock`, this.getLatestBlock);
-        this.router.get(`${this.path}/getblockbynumber`, this.getBlockByNumber);
+        this.router.get(`${this.path}/getblockbynumber/:blocknumber`, this.getBlockByNumber);
     }
 
     public getLatestBlock = async (request: express.Request, response: express.Response) => {
@@ -20,7 +20,7 @@ export class NeblioRoutes {
     }
 
     public getBlockByNumber = async (request: express.Request, response: express.Response) => {
-        const blockNumber = request.params.number;
+        const blockNumber = request.params.blocknumber;
 
         const rpcResponse = await this.rpcClient.request('getblockbynumber', [blockNumber, true]);
 
