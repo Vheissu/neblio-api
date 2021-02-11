@@ -2,6 +2,10 @@ import { JsonRpc } from './rpc-client';
 import { NeblioRoutes } from './routes';
 import fetch from 'node-fetch';
 import express from 'express';
+import dotenv from 'dotenv';
+
+// Load environment variables
+dotenv.config();
 
 if (!globalThis.fetch) {
 	globalThis.fetch = fetch;
@@ -10,7 +14,7 @@ if (!globalThis.fetch) {
 const app = express();
 const port = 3000;
 
-const rpcClient = new JsonRpc('127.0.0.1:6326', 'user', 'password');
+const rpcClient = new JsonRpc(process.env.rpchost, process.env.rpcuser, process.env.rpcpass);
 
 const neblioRoutes = new NeblioRoutes(rpcClient);
 
