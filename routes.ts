@@ -17,7 +17,7 @@ export class NeblioRoutes {
         this.router.get(`${this.path}/getrawmempool`, this.getRawMemPool);
         this.router.get(`${this.path}/getbalance`, this.getBalance);
         this.router.get(`${this.path}/getntp1balance/:identifier`, this.getNtp1Balance);
-        this.router.get(`${this.path}/getnewaddress/:label`, this.getNewAddress);
+        //this.router.get(`${this.path}/getnewaddress/:label`, this.getNewAddress);
     }
 
     public getLatestBlock = async (request: express.Request, response: express.Response) => {
@@ -64,13 +64,13 @@ export class NeblioRoutes {
         return response.json(rpcResponse.result);
     }
 
-    public getNewAddress = async (request: express.Request, response: express.Response) => {
-        const label = request.params.label;
+    // public getNewAddress = async (request: express.Request, response: express.Response) => {
+    //     const label = request.params.label;
 
-        const rpcResponse = await this.rpcClient.request('getnewaddress', [label]);
+    //     const rpcResponse = await this.rpcClient.request('getnewaddress', [label]);
 
-        return response.json(rpcResponse.result);
-    }
+    //     return response.json(rpcResponse.result);
+    // }
 
     public getBalance = async (request: express.Request, response: express.Response) => {
         const rpcResponse = await this.rpcClient.request('getbalance');
