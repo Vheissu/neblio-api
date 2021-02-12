@@ -22,6 +22,7 @@ A sample env file is provided, you can rename `.env.sample` to `.env` and change
 - /neblio/getblockbynumber/:blockHeight - Gets a block based on the supplied block height value
 - /neblio/getblockhash/:blockHeight - Gets the hash of a blog based on supplied block height value
 - /neblio/getblock/:hash - Gets a block by its block hash value
+- /neblio/getnewaddress/:label - Generates a new Neblio wallet address and labels it using the supplied label
 
 ## Support my work
 
