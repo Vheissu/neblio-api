@@ -12,7 +12,7 @@ if (!globalThis.fetch) {
 }
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const rpcClient = new JsonRpc(process.env.rpchost, process.env.rpcuser, process.env.rpcpass);
 

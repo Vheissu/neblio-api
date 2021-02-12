@@ -16,6 +16,11 @@ Pull this repository down to where you want it to exist on your server. Configur
 
 A sample env file is provided, you can rename `.env.sample` to `.env` and change the values accordingly. In a production application, you would never use the `.env` file this is only for testing. These environment variables should be populated elsewhere.
 
+## Running it
+
+While PM2 is recommended for deployed environments, you can run the app locally using `npx ts-node api.ts` which is one of the easiest ways to run it in a development/testing setting. PM2 is great for deploying to a server as it handles service creation and process management for you.
+
+The API is available by default on port 3000.
 ## Supported Endpoints
 
 - /neblio/getlatestblock: returns the latest block height
