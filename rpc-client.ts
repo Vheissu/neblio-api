@@ -2,18 +2,19 @@ export class JsonRpc {
     private endpoint = null;
     private lastId = 1;
     private debug = false;
-    private headers = new Headers();
+    private headers = {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+    };
 
     constructor(endpoint: string, user = '', password = '', debug = false) {
         this.endpoint = endpoint;
         this.debug = debug;
 
-        this.headers.set('Accept', 'application/json, text/plain, */*');
-        this.headers.set('Content-Type', 'application/json');
-
         if (user != '' || password != '') {
             const authString = `${user}:${password}`;
-            this.headers.set('Authorization', `Basic ${Buffer.from(authString).toString('base64')}`);
+
+            this.headers['Authorization'] = `Basic ${Buffer.from(authString).toString('base64')}`;
         }
     }
 
