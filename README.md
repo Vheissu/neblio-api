@@ -16,6 +16,13 @@ Pull this repository down to where you want it to exist on your server. Configur
 
 A sample env file is provided, you can rename `.env.sample` to `.env` and change the values accordingly. In a production application, you would never use the `.env` file this is only for testing. These environment variables should be populated elsewhere.
 
+## Supported Endpoints
+
+- /neblio/getlatestblock: returns the latest block height
+- /neblio/getblockbynumber/:blockHeight - Gets a block based on the supplied block height value
+- /neblio/getblockhash/:blockHeight - Gets the hash of a blog based on supplied block height value
+- /neblio/getblock/:hash - Gets a block by its block hash value
+
 ## Support my work
 
 All NEBL donations/tips are appreciated: NevXzxMMFxf12vvKhWQuzkgKNiZHQzf8LH
