@@ -13,6 +13,9 @@ export class NeblioRoutes {
         this.router.get(`${this.path}/getblockbynumber/:blocknumber`, this.getBlockByNumber);
         this.router.get(`${this.path}/getblockhash/:blocknumber`, this.getBlockHash);
         this.router.get(`${this.path}/getblock/:hash`, this.getBlock);
+        this.router.get(`${this.path}/getrawtransaction/:txid`, this.getRawTransaction);
+        this.router.get(`${this.path}/getrawmempool`, this.getRawMemPool);
+        this.router.get(`${this.path}/getntp1balance/:identifier`, this.getNtp1Balance);
         this.router.get(`${this.path}/getnewaddress/:label`, this.getNewAddress);
     }
 
@@ -46,10 +49,33 @@ export class NeblioRoutes {
         return response.json(rpcResponse.result);
     }
 
+    public getRawTransaction = async (request: express.Request, response: express.Response) => {
+        const txid = request.params.txid;
+
+        const rpcResponse = await this.rpcClient.request('getrawtransaction', [txid, true]);
+
+        return response.json(rpcResponse.result);
+    }
+
+    public getRawMemPool = async (request: express.Request, response: express.Response) => {
+        const rpcResponse = await this.rpcClient.request('getrawmempool');
+
+        return response.json(rpcResponse.result);
+    }
+
     public getNewAddress = async (request: express.Request, response: express.Response) => {
         const label = request.params.label;
 
         const rpcResponse = await this.rpcClient.request('getnewaddress', [label]);
+
+        return response.json(rpcResponse.result);
+    }
+
+    public getNtp1Balance = async (request: express.Request, response: express.Response) => {
+        // tokenId or name
+        const identifier = request.params.identifier;
+
+        const rpcResponse = await this.rpcClient.request('getntp1balance', [identifier]);
 
         return response.json(rpcResponse.result);
     }

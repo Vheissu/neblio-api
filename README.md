@@ -27,6 +27,9 @@ The API is available by default on port 3000. The port can be changed by specify
 - /neblio/getblockbynumber/:blockHeight - Gets a block based on the supplied block height value
 - /neblio/getblockhash/:blockHeight - Gets the hash of a blog based on supplied block height value
 - /neblio/getblock/:hash - Gets a block by its block hash value
+- /neblio/getrawtransaction/:txid - Gets a raw transaction based on supplied transaction id
+- /neblio/getrawmempool - Gets the raw mempool (unconfirmed blocks)
+- /neblio/getntp1balance/identifier - Gets the NTP1 token balance for a token name or tokenId (for example, http://localhost:3000/neblio/getntp1balance/db)
 - /neblio/getnewaddress/:label - Generates a new Neblio wallet address and labels it using the supplied label
 
 ## Support my work
