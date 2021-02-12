@@ -20,7 +20,7 @@ A sample env file is provided, you can rename `.env.sample` to `.env` and change
 
 While PM2 is recommended for deployed environments, you can run the app locally using `npx ts-node api.ts` which is one of the easiest ways to run it in a development/testing setting. PM2 is great for deploying to a server as it handles service creation and process management for you.
 
-The API is available by default on port 3000.
+The API is available by default on port 3000. The port can be changed by specifying a `port` environment variable value (see `.env.sample`)
 ## Supported Endpoints
 
 - /neblio/getlatestblock: returns the latest block height
