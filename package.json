@@ -4,7 +4,8 @@
   "description": "An API wrapper around Neblio daemon/wallets running locally",
   "main": "api.ts",
   "scripts": {
-    "test": "npm run-script test"
+    "test": "npm run-script test",
+    "start": "npx ts-node api.ts"
   },
   "repository": {
     "type": "git",
